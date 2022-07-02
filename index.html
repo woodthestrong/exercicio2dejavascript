@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form" >
+        <input type="text" placeholder="nome" id="nome">
+        <input type="text" placeholder="sobrenome" id="sobrenome">
+        <input type="number" placeholder="idade" id="idade">
+        <input type="submit" id="submit" value="Registrar">
+    </form>
+    <div id="resultado"></div>
+    <script>
+        var form = document.getElementById("form");
+       
+        var div = document.getElementById("resultado").value;
+
+        form.addEventListener('submit', function(event){
+            event.preventDefault();
+            var nome =  document.getElementById("nome").value;
+            var sobrenome =  document.getElementById("sobrenome").value;
+            var idade =  document.getElementById("idade").value;
+            let lista = document.createElement("ul");
+            let item =  document.createElement("li");
+            item.textContent = `${nome}` + " " + `${sobrenome}` + ", " + `${idade}` + " anos";
+            lista.appendChild(item);
+            resultado.appendChild(lista);
+            document.getElementById("nome").value = "";
+            document.getElementById("sobrenome").value = "";
+            document.getElementById("idade").value = "";                      
+        })
+    </script>  
+</body>
+</html>
